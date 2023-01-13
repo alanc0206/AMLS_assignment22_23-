@@ -98,14 +98,13 @@ def main():
     train_data_dir = './Datasets/dataset_AMLS_22-23/celeba/img'
     train_label_dir = './Datasets/dataset_AMLS_22-23/celeba/labels.csv'
 
-    train_label_data = pd.read_csv(train_label_dir, sep='\t', nrows=100)
+    train_label_data = pd.read_csv(train_label_dir, sep='\t')
     for label in train_label_data[type_of_label]:
         label = 0 if label == -1 else label
         train_label.append(label)
 
     data = os.listdir(train_data_dir)
     data = natsorted(data)
-    data = data[:100]
     for f in data:
         path = os.path.join(train_data_dir, f)
         img = transform(Image.open(path).convert("RGB"))
@@ -122,14 +121,13 @@ def main():
     test_data_dir = './Datasets/dataset_AMLS_22-23_test/celeba_test/img'
     test_label_dir = './Datasets/dataset_AMLS_22-23_test/celeba_test/labels.csv'
 
-    test_label_data = pd.read_csv(test_label_dir, sep='\t', nrows=100)
+    test_label_data = pd.read_csv(test_label_dir, sep='\t')
     for label in test_label_data[type_of_label]:
         label = 0 if label == -1 else label
         test_label.append(label)
 
     data = os.listdir(test_data_dir)
     data = natsorted(data)
-    data = data[:100]
     for f in data:
         path = os.path.join(test_data_dir, f)
         img = transform(Image.open(path).convert("RGB"))
