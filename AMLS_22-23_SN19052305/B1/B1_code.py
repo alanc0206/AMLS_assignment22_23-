@@ -97,8 +97,8 @@ def main():
     test_label = []
 
     #Load train dataset
-    train_data_dir = '../Datasets/dataset_AMLS_22-23/cartoon_set/img/'
-    train_label_dir = '../Datasets/dataset_AMLS_22-23/cartoon_set/labels.csv'
+    train_data_dir = './Datasets/dataset_AMLS_22-23/cartoon_set/img/'
+    train_label_dir = './Datasets/dataset_AMLS_22-23/cartoon_set/labels.csv'
 
     train_label_data = pd.read_csv(train_label_dir, sep='\t')
     for label in train_label_data[type_of_label]:
@@ -121,8 +121,8 @@ def main():
          val_label.append(train_label.pop(r))
 
     #Load test dataset
-    test_data_dir = '../Datasets/dataset_AMLS_22-23_test/cartoon_set_test/img'
-    test_label_dir = '../Datasets/dataset_AMLS_22-23_test/cartoon_set_test/labels.csv'
+    test_data_dir = './Datasets/dataset_AMLS_22-23_test/cartoon_set_test/img'
+    test_label_dir = './Datasets/dataset_AMLS_22-23_test/cartoon_set_test/labels.csv'
 
     test_label_data = pd.read_csv(test_label_dir, sep='\t')
     for label in test_label_data[type_of_label]:
