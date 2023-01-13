@@ -42,7 +42,6 @@ def main():
                 nn.ReLU(),
                 nn.MaxPool2d(kernel_size=2)
             )
-            self.drop_out = nn.Dropout(p=0.2)
             self.fc1 = nn.Linear(8192, 2048)
             self.fc2 = nn.Linear(2048, num_class)
 
@@ -51,7 +50,6 @@ def main():
             x = self.conv1(x)
             x = self.conv2(x)
             x = x.view(x.size(0), -1)
-            x = self.drop_out(x)
             x = self.fc1(x)
             x = self.fc2(x)
             return x
