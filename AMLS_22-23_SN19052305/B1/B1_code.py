@@ -25,8 +25,7 @@ def main():
     #Transform
     transform = transforms.Compose([transforms.CenterCrop((300,300)), #Crop the image because 500*500 is too big and most pixels are not useful
                                     transforms.Resize((64, 64)), #Resized the image to 64*64 for faster processing
-                                    transforms.ToTensor(),
-                                    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
+                                    transforms.ToTensor(),])
 
     #CNN class which defines the model
     class CNN (nn.Module):
